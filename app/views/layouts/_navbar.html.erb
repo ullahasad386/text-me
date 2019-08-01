@@ -1,6 +1,4 @@
-<a class="item">
-  Chatroom
-</a>
+<%= link_to "Chatroom", root_path, class: 'item' %>
 <a class="item">
   All Users
 </a>
@@ -8,10 +6,8 @@
   <div class="ui dropdown item">
     Account <i class="dropdown icon"></i>
     <div class="menu">
+      <%= link_to "Your Profile", current_user, class: 'item' %>
       <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'item' %>
-      <a class="item">English</a>
-      <a class="item">Russian</a>
-      <a class="item">Spanish</a>
     </div>
   </div>
   <div class="item">
