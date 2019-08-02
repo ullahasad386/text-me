@@ -1,1 +1,26 @@
-<h1 align='center'>Welcome to the <%= @user.first_name %>'s page</h1>
+<h1 align='center'>Welcome to the
+    <%= current_user.full_name.present? ? current_user.full_name : current_user.email %>'s page
+</h1>
+
+<div class="ui card">
+  <div class="image">
+    <% if @user.avatar.attached? %>
+      <image src="<%=(url_for(@user.avatar))%>">
+    <% end %>
+  </div>
+  <div class="content">
+    <a class="header"><%= @user.full_name %></a>
+    <div class="meta">
+      <span class="date">Joined <%= time_ago_in_words(@user.created_at) %> ago</span>
+    </div>
+    <div class="description">
+      Kristy is an art director living in New York.
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      22 Friends
+    </a>
+  </div>
+</div>

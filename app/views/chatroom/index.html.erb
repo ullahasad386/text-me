@@ -57,14 +57,16 @@
 
 <div class="ui inverted vertical menu">
   <a class="active item">
-    Home
+    Users
   </a>
-  <a class="item">
-    Messages
-  </a>
-  <a class="item">
-    Friends
-  </a>
+
+    <% User.all.each do |users| %>
+    <a class="item">
+      <%= users.full_name %>
+    </a>
+
+    <% end %>
+  
 </div>
 </div>
 </div>

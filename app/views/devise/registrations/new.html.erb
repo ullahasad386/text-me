@@ -15,28 +15,33 @@
             <%= devise_error_messages! %>
           </div>
 
-
-          <div class="field ">
-            <%= f.label :email %>
-            <%= f.email_field :email, autofocus: true ,placeholder: "john@example.com"%>
-          </div>
-
           <div class="field ">
             <div class="two fields">
               <div class="field">
             <%= f.label :first_name %>
-            <%= f.text_field :first_name, placeholder: "Jon"%>
+            <%= f.text_field :first_name, placeholder: "Jon", required: true%>
           </div>
 
           <div class="field ">
             <%= f.label :last_name %>
-            <%= f.text_field :last_name, placeholder: "Doe"%>
+            <%= f.text_field :last_name, placeholder: "Doe", required: true%>
           </div>
           </div>
           </div>
 
+          <div class="field">
+            <%= f.label "Profile Picture" %>
+            <%= f.file_field :avatar %>
+          </div>
 
-          
+
+          <div class="field ">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true ,placeholder: "john@example.com", required: true%>
+          </div>
+
+
+
 
 
 
@@ -44,14 +49,14 @@
           <div class="field ">
             <%= f.label :password %>
 
-              <% if @minimum_password_length %>
-              <div class="ui pointing below label">
-                  <%= @minimum_password_length %> characters minimum
-              </div>
-              <% end %>
+            <% if @minimum_password_length %>
+            <div class="ui pointing below label">
+                <%= @minimum_password_length %> characters minimum
+            </div>
+            <% end %>
               <!-- <div  data-tooltip = "Add users to your feed"> -->
 
-                <%= f.password_field :password, autocomplete: "off" ,placeholder: "Enter Password" ,data: {toggle: "tooltip", placement: "left" }%>
+                <%= f.password_field :password, autocomplete: "off" , required: true , placeholder: "Enter Password" ,data: {toggle: "tooltip", placement: "left" }%>
               <!-- </div> -->
 
 
@@ -59,7 +64,7 @@
 
           <div class="field">
             <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "off" ,placeholder: "Confirm Password" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off" ,placeholder: "Confirm Password", required: true %>
           </div>
 
           <div class="ui left icon input">
